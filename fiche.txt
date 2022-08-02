@@ -1,2 +1,8 @@
 create backend folder - .gitignore (.env node_modules)  npm i express dotenv mongoose colors (dotenv for env variable) | npm i -D nodemon
 2- use git   ( git init  git add.  git commit -m 'comment')
+3-create our routes express.Router() and specifiying all (get put ...) and set callback for controller function 
+4-create controller function  (crud)(all of them are async because from mongo) (use json  urlencoded midleware to access to req body) and add error midleware 
+5-the errorMidleware just send you a json with eror message   | notice that (err, req,res,next)  err  to make it know that is error midlware and the function will overwrite it 
+6- use the middleware 
+7-use asyncHandler to handle error
+7 setup mongodb database     set up .env
