@@ -1,0 +1,1 @@
+create backend folder - .gitignore (.env node_modules)  npm i express dotenv mongoose colors (dotenv for env variable) | npm i -D nodemon
