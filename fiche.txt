@@ -5,4 +5,8 @@ create backend folder - .gitignore (.env node_modules)  npm i express dotenv mon
 5-the errorMidleware just send you a json with eror message   | notice that (err, req,res,next)  err  to make it know that is error midlware and the function will overwrite it 
 6- use the middleware 
 7-use asyncHandler to handle error
-7 setup mongodb database     set up .env
+7 setup mongodb database     set up .env and connect with it
+8-create goals model 
+9-implement crud operation on goals model 
+10- do the same for users ( post / | post /login | get  /me)
+11-npm i bcryptjs  jsonwebtoken
