@@ -5,7 +5,7 @@ const User = require("../models/userModel");
 const protect = asyncHandler(async (req, res, next) => {
   let token;
   if (
-    req.headers.authorization &&
+    req.headers.authorization && // if headers have auth  and have an  jwt auth header
     req.headers.authorization.startsWith("Bearer")
   ) {
     // in every autho header  the token start with Bearer
@@ -14,13 +14,18 @@ const protect = asyncHandler(async (req, res, next) => {
       token = req.headers.authorization.split(" ")[1];
       // verify token
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
-      //Get user from the token
+      //Get user from the token           decoded is jwt object
       req.user = await User.findById(decoded.id).select("-password");
       next();
     } catch (error) {
       console.log(error);
+      res.status(401);
       throw new Error("Not authorized");
     }
+  }
+  if (!token) {
+    res.status(401);
+    throw new Error("Not authorized, no token");
   }
 });
 module.exports = { protect };
