@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node backend/server.js",
     "server": "nodemon backend/server.js",
-    "client": "npm start --prefix frontend "
+    "client": "npm start --prefix frontend ",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Mohammed Hamada Lachhab",
   "license": "MIT",
