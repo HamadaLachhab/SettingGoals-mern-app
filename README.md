@@ -1,5 +1,5 @@
-# SettingGoals-mern-app using Redux toolkit
-### This is  a mern-stack project which is a simple  application to keep tracking of your daily goals :
+# SettingGoals-mern-app using Redux toolkit 
+### This is  a mern-stack project which is a simple  application to keep tracking of your daily goals for easy access hit the link [Click me](https://mernappgoalsetterhamada.herokuapp.com/):
 > - complete crud operation  on goals collection
 > - authorization  authentication using jwt ( jsonwebtoken ) 
 > - you can register, login and logout 
