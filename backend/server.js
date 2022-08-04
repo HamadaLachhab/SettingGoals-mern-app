@@ -1,3 +1,4 @@
+const path = require("path");
 const express = require("express");
 const colors = require("colors");
 const { errorHandler } = require("./middleware/errorMiddleware");
@@ -14,6 +15,19 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use("/api/goals", require("./routes/goalRoutes")); // use the goals router
 app.use("/api/users", require("./routes/userRoutes")); // use the user router
+// Serve frontend (frontend must be under routes )
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../frontend/build")));
+  app.get("*", (req, res) =>
+    res.sendFile(
+      path.resolve(__dirname, "../", "frontend", "build", index.html)
+    )
+  );
+} else {
+  app.get("/", (res, req) => {
+    res.send("please set to production");
+  });
+}
 
 app.use(errorHandler); // that will overwrite the default error handler
 
